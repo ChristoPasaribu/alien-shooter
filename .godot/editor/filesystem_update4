@@ -1,0 +1,8 @@
+res://scripts/bullet.gd
+res://scenes/bullet.tscn
+res://scenes/main.tscn
+res://scripts/player.gd
+res://scenes/player.tscn
+res://scripts/enemy.gd
+res://scenes/enemy.tscn
+res://scripts/enemy_spawner.gd

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://2xqeonyip0x3"]
+
+[ext_resource type="Script" uid="uid://b7745ok3xn8ok" path="res://scripts/enemy.gd" id="1_md0e3"]
+[ext_resource type="Texture2D" uid="uid://cusr0ce1yie1s" path="res://pixel-art-green-gray-cartoon-260nw-2131390057-removebg-preview.png" id="2_4ra3w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5uy6h"]
+
+[node name="Enemy" type="CharacterBody2D" unique_id=670430308 groups=["enemy"]]
+script = ExtResource("1_md0e3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=374350927]
+position = Vector2(0, 1.9999962)
+scale = Vector2(0.20192307, 0.1785714)
+texture = ExtResource("2_4ra3w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1858178855]
+shape = SubResource("RectangleShape2D_5uy6h")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1286239629]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

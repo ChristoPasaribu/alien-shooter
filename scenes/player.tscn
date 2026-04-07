@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bia8duo4ev21d"]
+
+[ext_resource type="Script" uid="uid://c6mn2ayqhse4h" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://c62wh6auu7mqo" path="res://icon.svg" id="2_qhqgy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(33.5, 30)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
+radius = 189.00264
+
+[node name="Player" type="CharacterBody2D" unique_id=724453379 groups=["player"]]
+script = ExtResource("1_g2els")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1586233899]
+position = Vector2(-0.25000203, -1.4305115e-06)
+scale = Vector2(0.19140628, 0.17187504)
+texture = ExtResource("2_qhqgy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=240634262]
+shape = SubResource("RectangleShape2D_g2els")
+
+[node name="MuzzleUp" type="Marker2D" parent="." unique_id=1564025587]
+position = Vector2(0, -25)
+
+[node name="ShootTimer" type="Timer" parent="." unique_id=235045702]
+wait_time = 0.5
+autostart = true
+
+[node name="DetectArea" type="Area2D" parent="." unique_id=50604514]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea" unique_id=160792014]
+shape = SubResource("CircleShape2D_g2els")
+
+[node name="MuzzleLeft" type="Marker2D" parent="." unique_id=1575876707]
+position = Vector2(-25, 0)
+
+[node name="MuzzleDown" type="Marker2D" parent="." unique_id=1354096929]
+position = Vector2(0, 25)
+
+[node name="MuzzleRight" type="Marker2D" parent="." unique_id=1203099112]
+position = Vector2(23, 0)

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bffa22d5syw85"]
+
+[ext_resource type="Texture2D" uid="uid://ciregwpmalq7u" path="res://bullet-removebg-preview.png" id="1_mkf8s"]
+[ext_resource type="Script" uid="uid://dntuftgt8lli5" path="res://scripts/bullet.gd" id="1_y25gk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l5glv"]
+radius = 6.3245554
+
+[node name="Bullet" type="Area2D" unique_id=794385533]
+script = ExtResource("1_y25gk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1515512577]
+position = Vector2(-1.3125012, 0.06250302)
+scale = Vector2(0.049579334, 0.04296873)
+texture = ExtResource("1_mkf8s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=670094308]
+shape = SubResource("CircleShape2D_l5glv")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1221243506]
+rect = Rect2(-10, -11, 20, 23)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
