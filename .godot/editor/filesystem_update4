@@ -1,8 +1,12 @@
-res://scripts/bullet.gd
-res://scenes/bullet.tscn
-res://scenes/main.tscn
-res://scripts/player.gd
 res://scenes/player.tscn
 res://scripts/enemy.gd
-res://scenes/enemy.tscn
+res://scenes/main.tscn
+res://scripts/bullet.gd
+res://scripts/player.gd
+res://scenes/flame_attack.tscn
 res://scripts/enemy_spawner.gd
+res://scripts/flame_attack.gd
+res://scenes/fireball.tscn
+res://scripts/fireball.gd
+res://scripts/flame_explosion.gd
+res://scenes/flame_explosion.tscn

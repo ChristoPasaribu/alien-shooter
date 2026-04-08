@@ -1,0 +1,59 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <!-- IDLE UP (0,0) -->
+  <g transform="translate(0,0)">
+    <rect x="48" y="32" width="32" height="64" rx="4" fill="#4a90e2"/>
+    <rect x="40" y="24" width="48" height="16" rx="2" fill="#6aa8f7"/>
+    <rect x="56" y="96" width="24" height="32" rx="12" fill="#2c5aa0"/>
+    <rect x="60" y="100" width="16" height="24" rx="8" fill="#1e3d6b"/>
+    ircle cx="68" cy="112" r="3" fill="#fff"/>
+    ircle cx="76" cy="112" r="3" fill="#fff"/>
+  </g>
+  
+  <!-- IDLE DOWN (64,0) -->
+  <g transform="translate(64,0)">
+    <rect x="48" y="96" width="32" height="64" rx="4" fill="#4a90e2"/>
+    <rect x="40" y="160" width="48" height="16" rx="2" fill="#6aa8f7"/>
+    <rect x="56" y="24" width="24" height="32" rx="12" fill="#2c5aa0"/>
+    <rect x="60" y="28" width="16" height="24" rx="8" fill="#1e3d6b"/>
+    ircle cx="68" cy="40" r="3" fill="#fff"/>
+    ircle cx="76" cy="40" r="3" fill="#fff"/>
+  </g>
+  
+  <!-- IDLE LEFT (128,0) -->
+  <g transform="translate(128,0)">
+    <rect x="96" y="48" width="64" height="32" rx="4" fill="#4a90e2"/>
+    <rect x="80" y="40" width="16" height="48" rx="2" fill="#6aa8f7"/>
+    <rect x="24" y="56" width="32" height="24" rx="12" fill="#2c5aa0"/>
+    <rect x="28" y="60" width="24" height="16" rx="8" fill="#1e3d6b"/>
+    ircle cx="40" cy="68" r="3" fill="#fff"/>
+    ircle cx="48" cy="68" r="3" fill="#fff"/>
+  </g>
+  
+  <!-- IDLE RIGHT (192,0) -->
+  <g transform="translate(192,0)">
+    <rect x="24" y="48" width="64" height="32" rx="4" fill="#4a90e2"/>
+    <rect x="80" y="40" width="16" height="48" rx="2" fill="#6aa8f7"/>
+    <rect x="144" y="56" width="32" height="24" rx="12" fill="#2c5aa0"/>
+    <rect x="140" y="60" width="24" height="16" rx="8" fill="#1e3d6b"/>
+    ircle cx="128" cy="68" r="3" fill="#fff"/>
+    ircle cx="120" cy="68" r="3" fill="#fff"/>
+  </g>
+  
+  <!-- WALK UP Frame 1 (0,64) -->
+  <g transform="translate(0,64)">
+    <rect x="44" y="32" width="40" height="64" rx="4" fill="#4a90e2"/>
+    <rect x="36" y="24" width="56" height="16" rx="2" fill="#6aa8f7"/>
+    <rect x="52" y="96" width="24" height="32" rx="12" fill="#2c5aa0"/>
+    <rect x="56" y="100" width="16" height="24" rx="8" fill="#1e3d6b"/>
+    ircle cx="64" cy="112" r="3" fill="#fff"/>
+    ircle cx="72" cy="112" r="3" fill="#fff"/>
+  </g>
+  
+  <!-- Grid lines untuk memudahkan potong -->
+  <g stroke="#333" stroke-width="1" opacity="0.3">
+    e x1="0" y1="64" x2="256" y2="64"/>
+    e x1="64" y1="0" x2="64" y2="256"/>
+    e x1="128" y1="0" x2="128" y2="256"/>
+    e x1="192" y1="0" x2="192" y2="256"/>
+  </g>
+</svg>

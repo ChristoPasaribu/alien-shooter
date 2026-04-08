@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://pl7skynect50"]
+
+[ext_resource type="Script" uid="uid://d4bti12e2wvsp" path="res://scripts/flame_explosion.gd" id="1_nq3n6"]
+[ext_resource type="Texture2D" uid="uid://dun75cssb0fcl" path="res://images__1_-removebg-preview.png" id="2_jejdb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o21h8"]
+radius = 86.00581
+
+[node name="FlameExplosion" type="Area2D" unique_id=175243613]
+script = ExtResource("1_nq3n6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=172467178]
+shape = SubResource("CircleShape2D_o21h8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=547669300]
+position = Vector2(0, -0.999998)
+scale = Vector2(0.8333333, 0.7977778)
+texture = ExtResource("2_jejdb")
+
+[node name="LifeTimer" type="Timer" parent="." unique_id=1414977323]

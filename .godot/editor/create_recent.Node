@@ -1,8 +1,11 @@
-Marker2D
+AnimatedSprite2D
 Timer
-Node2D
-VisibleOnScreenNotifier2D
-CollisionShape2D
 Sprite2D
-CharacterBody2D
+CollisionShape2D
+VisibleOnScreenNotifier2D
 Area2D
+ProgressBar
+CanvasLayer
+Marker2D
+Node2D
+CharacterBody2D

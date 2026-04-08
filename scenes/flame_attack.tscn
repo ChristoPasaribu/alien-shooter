@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://bw812heo266d6"]
+
+[ext_resource type="Texture2D" uid="uid://dun75cssb0fcl" path="res://images__1_-removebg-preview.png" id="2_tcxwk"]
+
+[sub_resource type="GDScript" id="GDScript_xbyyb"]
+script/source = "extends Area2D
+
+@export var speed := 400.0
+@export var max_distance := 330.0
+@export var life_time := 1.0
+
+var direction: Vector2 = Vector2.RIGHT
+var start_position: Vector2
+var hit_bodies := []
+
+@onready var life_timer = $LifeTimer
+
+func _ready():
+	body_entered.connect(_on_body_entered)
+	start_position = global_position
+	
+	if direction != Vector2.ZERO:
+		rotation = direction.angle()
+	
+	life_timer.wait_time = life_time
+	life_timer.timeout.connect(_on_life_timer_timeout)
+	life_timer.start()
+	
+	damage_overlapping_enemies()
+
+func _physics_process(delta):
+	global_position += direction.normalized() * speed * delta
+	
+	if global_position.distance_to(start_position) >= max_distance:
+		queue_free()
+	
+	damage_overlapping_enemies()
+
+func damage_overlapping_enemies():
+	var bodies = get_overlapping_bodies()
+	for body in bodies:
+		apply_damage_to_body(body)
+
+func _on_body_entered(body):
+	apply_damage_to_body(body)
+
+func apply_damage_to_body(body):
+	if not body.is_in_group(\"enemy\"):
+		return
+	
+	if body in hit_bodies:
+		return
+	
+	hit_bodies.append(body)
+	
+	var player = get_tree().get_first_node_in_group(\"player\")
+	if player:
+		player.add_alien_energy(player.alien_kill_gain)
+	
+	body.queue_free()
+
+func _on_life_timer_timeout():
+	queue_free()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dbr3p"]
+
+[node name="FlameAttack" type="Area2D" unique_id=1326180244]
+script = SubResource("GDScript_xbyyb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=157732427]
+scale = Vector2(10, 5)
+shape = SubResource("RectangleShape2D_dbr3p")
+
+[node name="LifeTimer" type="Timer" parent="." unique_id=1197128575]
+wait_time = 0.6
+one_shot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2094966089]
+scale = Vector2(0.38888887, 0.41111112)
+texture = ExtResource("2_tcxwk")

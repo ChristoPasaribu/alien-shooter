@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d2quenchtnsj5"]
+
+[ext_resource type="Script" uid="uid://dqodi052hlusf" path="res://scripts/fireball.gd" id="1_3s14c"]
+[ext_resource type="Texture2D" uid="uid://ce81ygd1eyp3j" path="res://images-removebg-preview.png" id="2_1gl40"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1gl40"]
+radius = 19.0
+
+[node name="Fireball" type="Area2D" unique_id=1355708484]
+script = ExtResource("1_3s14c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1745582596]
+shape = SubResource("CircleShape2D_1gl40")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1708217097]
+position = Vector2(7.6293945e-06, 0)
+scale = Vector2(0.19333333, 0.16666667)
+texture = ExtResource("2_1gl40")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=943420439]
